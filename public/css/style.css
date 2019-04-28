@@ -1,0 +1,16 @@
+body{
+    height: 3000px;
+    background: #fff;
+}
+.top {
+    height: 100vh;
+    background-color: gold;
+    text-align: center;
+}
+.top_title {
+    text-align: center;
+    padding-top: 45vh;
+    padding-bottom: 10vh;
+    font-size: 2em;
+    color: #fff
+}
