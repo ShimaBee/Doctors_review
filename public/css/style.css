@@ -24,3 +24,13 @@ body{
     padding: 10vh 20vw;
     margin: 10vh;
 }
+.container {
+    padding-top: 100px;
+    text-align: center;
+}
+.my_image {
+    width: 200px;
+    height: 200px;
+    margin: 50px 0;
+    border-radius: 50%;
+}

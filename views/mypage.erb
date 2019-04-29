@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+<h1>My Page</h1>
+<img class="my_image" src="../images/photo4_thum.jpg" alt="">
+<h2>◯◯◯◯◯◯</h2>
+
+<% @result.each do |user|%>
+<div class="review_wrapper">
+<p>user_id: <%= user["title"]%></p>
+<p>username: <%= user["contents"]%></p>
+</div>
+<% end%>
+</div>
+
+<%# if文でbuttonの種類を変えたい。 %>

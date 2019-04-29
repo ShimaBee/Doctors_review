@@ -38,7 +38,6 @@ end
 post '/login' do
   name = params['name']
   password = params['password']
-
   user_id = connection.exec("select id from users where name == name and password == password")
   if user
     session[:user_id] = user['id']
@@ -47,4 +46,9 @@ post '/login' do
   else
     erb :login
   end
+end
+
+get '/mypage' do
+  @result = connection.exec("SELECT * FROM reviews")
+  erb :mypage
 end
