@@ -27,7 +27,7 @@ post '/register' do
   name = params['name']
   email = params['email']
   password = params['password']
-  connection.exec("insert into users (name, email, password) values(name = $1, email = $2, password = $3)",[name, email, password])
+  connection.exec("insert into users (name, email, password) values($1, $2, $3)",[name, email, password])
   redirect '/'
 end
 
@@ -38,17 +38,21 @@ end
 post '/login' do
   name = params['name']
   password = params['password']
-  user_id = connection.exec("select id from users where name == name and password == password")
-  if user
-    session[:user_id] = user['id']
-    @user_session = session[:user_id]
-    redirect '/mypage'
-  else
-    erb :login
-  end
+  @user_id = connection.exec("select id from users where name = $1 and password = $2",[name, password]).first
+  # if user
+  #   session[:user_id] = user
+  #   redirect '/mypage'
+  # else
+  #   erb :login
+  # end
+  erb :index
 end
 
 get '/mypage' do
   @result = connection.exec("SELECT * FROM reviews")
   erb :mypage
+end
+
+get '/post' do
+  erb :post
 end
