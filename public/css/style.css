@@ -14,3 +14,13 @@ body{
     font-size: 2em;
     color: #fff
 }
+.review_wrapper{
+    margin: 30px;
+    padding: 30px;
+    border:black solid 1px;
+    
+}
+.form_wapper{
+    padding: 10vh 20vw;
+    margin: 10vh;
+}
